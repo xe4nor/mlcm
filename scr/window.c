@@ -3,6 +3,8 @@
 
 #include "window.h"
 
+#pragma warning(disable : 4996) // wegen sprintf
+
 #define INFO_BUFF	128
 
 static HWND g_hHiddenWindow = NULL;
@@ -33,7 +35,7 @@ void InitWindow() {
 			"Error",
 			MB_OK | MB_ICONERROR
 		);
-		return -1;
+		return;
 	}
 
 	g_hHiddenWindow = CreateWindowExA(
